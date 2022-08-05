@@ -136,10 +136,10 @@ body,
 } */
 
 .logo-rotate {
-    transform: rotate(120deg);
-    -webkit-transform: rotate(120deg);
-    -moz-transform: rotate(120deg);
-    -o-transform: rotate(120deg);
+    transform: rotate(33deg);
+    -webkit-transform: rotate(33deg);
+    -moz-transform: rotate(33deg);
+    -o-transform: rotate(33deg);
 }
 
 .go-icon {

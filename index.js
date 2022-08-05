@@ -36,7 +36,7 @@ else
 const searchEl = document.querySelector(".search-box");
 const searchField = document.querySelector(".search-field");
 const si = document.querySelector(".search-icon");
-const logoEl = document.querySelector(".logoImg");
+const logoEl = document.querySelector(".logo");
 const goIcon = document.querySelector(".go-icon");
 
 // Table elements: 
