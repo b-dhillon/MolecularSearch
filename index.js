@@ -1,5 +1,13 @@
 import ChemLib from './lib/ChemDoodleWeb.js';
+import data from './data.json' assert {type: 'json'};
+// const data = require('./data.json');
+
 // import logoImg from './img/logoImg.png';
+
+// console.log(data.PropertyTable.Properties[0]);
+// const values = Object.values(data.PropertyTable.Properties[0]);
+// console.log(values);
+
 
 
 let reader3d = new FileReader();
@@ -29,7 +37,16 @@ const searchEl = document.querySelector(".search-box");
 const searchField = document.querySelector(".search-field");
 const si = document.querySelector(".search-icon");
 const logoEl = document.querySelector(".logoImg");
-const goIcon = document.querySelector(".go-icon")
+const goIcon = document.querySelector(".go-icon");
+
+// Table elements: 
+const tableTitle = document.querySelector(".table-title");
+const iupacName = document.getElementById("iupac-name");
+const molecularFormula = document.getElementById("molecular-formula");
+const molecularWeight = document.getElementById("molecular-weight")
+const cid = document.getElementById("cid")
+
+
 
 
 
@@ -37,20 +54,22 @@ const goIcon = document.querySelector(".go-icon")
 function handleSearchFocus()
 {
     searchEl?.classList.add("border-searching");
-    si?.classList.add("si-rotate")
+    // si?.classList.add("si-rotate")
     logoEl?.classList.add("logo-rotate")
+    goIcon?.classList.add("go-in")
 }
 
 function handleSearchBlur()
 {
     searchEl?.classList.remove("border-searching");
-    si?.classList.remove("si-rotate");
+    // si?.classList.remove("si-rotate");
     logoEl?.classList.remove("logo-rotate")
+    goIcon?.classList.remove("go-in")
 }
 
 function handleGo()
 {
-    if (searchField.value.length > 0)
+    if (searchField.value.length > 1)
     {
         goIcon?.classList.add("go-in")
     } else
@@ -61,8 +80,7 @@ function handleGo()
 
 function handleKeyDown(event)
 {
-    console.log('User pressed: ', event.key);
-
+    // console.log('User pressed: ', event.key);
     if (event.key === 'Enter')
     {
         event.preventDefault();
@@ -106,6 +124,7 @@ function Display3D(_3Dmolecule)
     display3D.styles.backgroundColor = '#259872';
     display3D.dragPath = [];
     display3D.oldDrag = display3D.drag;
+
     display3D.drag = function (e)
     {
         this.dragPath[display3D.dragPath.length] = e.p;
@@ -148,8 +167,28 @@ function handleSearch(searchedString)
                 Display2D(molecule2d);
             };
         })
+
+    fetch(`https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/${searchedString}/property/Title,IUPACName,MolecularFormula,MolecularWeight/JSON`)
+        .then(res => res.json())
+        .then(data =>
+        {
+            const values = Object.values(data.PropertyTable.Properties[0]);
+            DisplayTable(values);
+            // tableTitle.innerHTML = values[4];
+            // console.log(values);
+        })
+
 }
 
+function DisplayTable(values)
+{
+    console.log(values);
+    tableTitle.innerHTML = values[4];
+    iupacName.innerHTML = values[3];
+    molecularFormula.innerHTML = values[1];
+    molecularWeight.innerHTML = values[2];
+    cid.innerHTML = values[0]
+}
 
 searchField.addEventListener('focus', handleSearchFocus);
 searchField.addEventListener('blur', handleSearchBlur);

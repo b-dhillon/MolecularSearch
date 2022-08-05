@@ -1,0 +1,13 @@
+{
+    "PropertyTable": {
+        "Properties": [
+            {
+                "Title": "Aspirin",
+                "IUPACName": "2-acetyloxybenzoic acid",
+                "CID": 2244,
+                "MolecularFormula": "C9H8O4",
+                "MolecularWeight": "180.16"
+            }
+        ]
+    }
+}
