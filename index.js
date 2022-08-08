@@ -10,6 +10,12 @@ import data from './data.json' assert {type: 'json'};
 
 
 
+
+
+// To do: After API query save the SDF thats returned in cache
+
+
+
 let reader3d = new FileReader();
 let reader2d = new FileReader();
 let readerProp = new FileReader();
