@@ -38,6 +38,8 @@ const si = document.querySelector(".search-icon");
 const logoEl = document.querySelector(".logo");
 const goIcon = document.querySelector(".go-icon");
 
+const searchBtn = document.querySelector(".searchBtn")
+
 // Table elements: 
 const tableTitle = document.querySelector(".table-title");
 const iupacName = document.getElementById("iupac-name");
@@ -193,8 +195,10 @@ function DisplayTable(values)
 // searchField.addEventListener('blur', handleSearchBlur);
 // searchField.addEventListener('keydown', handleKeyDown);
 
-goIcon.addEventListener('click', () => handleSearch(searchField.value));
+// goIcon.addEventListener('click', () => handleSearch(searchField.value));
 
+
+searchBtn.addEventListener('click', () => handleSearch(searchField.value))
 
 // Display2D();
 // Display3D();

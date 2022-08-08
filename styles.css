@@ -84,7 +84,7 @@ body,
 
 .searchBtn {
     width: 90px; 
-    height: 25px;
+    height: 35px;
     border-radius: 15px;
     border: none;
 }
@@ -223,7 +223,7 @@ body,
 #search::selection {color: #FFFFFF; background: rgba(0,0,0,0.25);}
 
 .search-field {
-    
+
 }
   
   
@@ -404,3 +404,6 @@ tr:nth-child(even) {
 #molecular-formula {};
 #molecular-weight {};
 #cid {};
+
+
+.sear
