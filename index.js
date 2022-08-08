@@ -1,19 +1,12 @@
 import ChemLib from './lib/ChemDoodleWeb.js';
 import data from './data.json' assert {type: 'json'};
-// const data = require('./data.json');
-
-// import logoImg from './img/logoImg.png';
 
 // console.log(data.PropertyTable.Properties[0]);
 // const values = Object.values(data.PropertyTable.Properties[0]);
 // console.log(values);
 
 
-
-
-
 // To do: After API query save the SDF thats returned in cache
-
 
 
 let reader3d = new FileReader();
@@ -62,7 +55,7 @@ function handleSearchFocus()
     searchEl?.classList.add("border-searching");
     // si?.classList.add("si-rotate")
     logoEl?.classList.add("logo-rotate")
-    goIcon?.classList.add("go-in")
+    // goIcon?.classList.add("go-in")
 }
 
 function handleSearchBlur()
@@ -70,7 +63,7 @@ function handleSearchBlur()
     searchEl?.classList.remove("border-searching");
     // si?.classList.remove("si-rotate");
     logoEl?.classList.remove("logo-rotate")
-    goIcon?.classList.remove("go-in")
+    // goIcon?.classList.remove("go-in")
 }
 
 function handleGo()
@@ -196,9 +189,11 @@ function DisplayTable(values)
     cid.innerHTML = values[0]
 }
 
-searchField.addEventListener('focus', handleSearchFocus);
-searchField.addEventListener('blur', handleSearchBlur);
-searchField.addEventListener('keydown', handleKeyDown);
+// searchField.addEventListener('focus', handleSearchFocus);
+// searchField.addEventListener('blur', handleSearchBlur);
+// searchField.addEventListener('keydown', handleKeyDown);
+
+goIcon.addEventListener('click', () => handleSearch(searchField.value));
 
 
 // Display2D();
