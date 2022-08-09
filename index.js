@@ -183,6 +183,9 @@ function DisplayTable(values)
 // searchField.addEventListener('focus', handleSearchFocus);
 // searchField.addEventListener('blur', handleSearchBlur);
 searchField.addEventListener('keydown', handleKeyDown);
+searchBtn.addEventListener('click', handleKeyDown);
+// searchBtn.addEventListener('click', handleKeyDown);
+
 
 console.log(searchField);
 
