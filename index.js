@@ -6,6 +6,7 @@ let molecule3d;
 let molecule2d;
 let size3d;
 let size2d;
+
 // Makes 2D & 3D canvases responsive
 const mediaQuery = window.matchMedia('(min-width: 680px)')
 if (mediaQuery.matches)
@@ -18,6 +19,7 @@ else
     size2d = 225;
     size3d = 266;
 }
+
 function Display2D(_2Dmolecule)
 {
     let display2D = new ChemLib.TransformCanvas('display2D', size2d, size2d, true);
@@ -63,17 +65,22 @@ function Display3D(_3Dmolecule)
     display3D.loadMolecule(mol);
 }
 
+function DisplayTable(values)
+{
+    console.log(values);
+    tableTitle.innerHTML = values[4];
+    iupacName.innerHTML = values[3];
+    molecularFormula.innerHTML = values[1];
+    molecularWeight.innerHTML = values[2];
+    cid.innerHTML = values[0]
+}
 
-// Selected elements:
+
+// Search and Logo elements:
 const searchEl = document.querySelector(".search-box");
 const searchField = document.querySelector(".search-field2");
 const logoEl = document.querySelector(".logo");
 const searchBtn = document.querySelector(".searchBtn");
-
-// const goIcon = document.querySelector(".go-icon");
-// const si = document.querySelector(".search-icon");
-
-// console.log(searchBtn);
 
 // Table elements: 
 const tableTitle = document.querySelector(".table-title");
@@ -84,12 +91,11 @@ const cid = document.getElementById("cid")
 
 
 
-
 // Event Handlers:
 function handleSearchFocus()
 {
-    logoEl?.classList.add("logo-rotate")
-    searchEl?.classList.add("border-searching");
+    logoEl.classList.add("logo-rotate")
+    searchEl.classList.add("border-searching");
 }
 
 function handleSearchBlur()
@@ -98,16 +104,6 @@ function handleSearchBlur()
     searchEl?.classList.remove("border-searching");
 }
 
-function handleGo()
-{
-    if (searchField.value.length > 1)
-    {
-        goIcon?.classList.add("go-in")
-    } else
-    {
-        goIcon?.classList.remove("go-in")
-    }
-}
 
 function handleKeyDown(event)
 {
@@ -121,7 +117,6 @@ function handleKeyDown(event)
         handleSearch(searchField.value);
     }
 };
-
 
 
 function handleSearch(searchedString)
@@ -162,31 +157,9 @@ function handleSearch(searchedString)
     //     })
 }
 
-function DisplayTable(values)
-{
-    console.log(values);
-    tableTitle.innerHTML = values[4];
-    iupacName.innerHTML = values[3];
-    molecularFormula.innerHTML = values[1];
-    molecularWeight.innerHTML = values[2];
-    cid.innerHTML = values[0]
-}
 
+// Event Listeners
 searchField.addEventListener('focus', handleSearchFocus);
 searchField.addEventListener('blur', handleSearchBlur);
 searchField.addEventListener('keydown', handleKeyDown);
 searchBtn.addEventListener('click', () => handleSearch(searchField.value));
-// searchBtn.addEventListener('click', handleKeyDown);
-
-// goIcon.addEventListener('click', () => handleSearch(searchField.value));
-
-function handleSearchBtn(event)
-{
-    // event.preventDefault();
-    // alert(searchField.value);
-    // handleSearch(searchField.value);
-    tableTitle.innerHTML = 'Worked!'
-
-}
-// searchBtn.addEventListener('touchend', handleSearchBtn)
-
