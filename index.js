@@ -196,10 +196,5 @@ function handleSearchBtn(event)
     tableTitle.innerHTML = 'Worked!'
 
 }
-
-
-searchBtn.addEventListener('touchend', handleSearchBtn)
-
-// Display2D();
-// Display3D();
+// searchBtn.addEventListener('touchend', handleSearchBtn)
 
