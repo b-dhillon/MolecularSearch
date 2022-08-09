@@ -6,10 +6,6 @@ let molecule3d;
 let molecule2d;
 let size3d;
 let size2d;
-
-
-
-
 // Makes 2D & 3D canvases responsive
 const mediaQuery = window.matchMedia('(min-width: 680px)')
 if (mediaQuery.matches)
@@ -22,8 +18,6 @@ else
     size3d = 320;
     size2d = 225;
 }
-
-// EXPORT THESE!!
 function Display2D(_2Dmolecule)
 {
     let display2D = new ChemLib.TransformCanvas('display2D', size2d, size2d, true);
@@ -68,6 +62,7 @@ function Display3D(_3Dmolecule)
     let mol = ChemLib.readMOL(_3Dmolecule);
     display3D.loadMolecule(mol);
 }
+
 
 // Selected elements:
 const searchEl = document.querySelector(".search-box");
