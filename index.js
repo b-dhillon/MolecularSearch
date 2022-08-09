@@ -167,15 +167,15 @@ function handleSearch(searchedString)
             };
         })
 
-    fetch(`https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/${searchedString}/property/Title,IUPACName,MolecularFormula,MolecularWeight/JSON`)
-        .then(res => res.json())
-        .then(data =>
-        {
-            const values = Object.values(data.PropertyTable.Properties[0]);
-            DisplayTable(values);
-            // tableTitle.innerHTML = values[4];
-            // console.log(values);
-        })
+    // fetch(`https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/${searchedString}/property/Title,IUPACName,MolecularFormula,MolecularWeight/JSON`)
+    //     .then(res => res.json())
+    //     .then(data =>
+    //     {
+    //         const values = Object.values(data.PropertyTable.Properties[0]);
+    //         DisplayTable(values);
+    //         // tableTitle.innerHTML = values[4];
+    //         // console.log(values);
+    //     })
 }
 
 function DisplayTable(values)
@@ -197,6 +197,7 @@ function DisplayTable(values)
 function handleSearchBtn(event)
 {
     event.preventDefault();
+    alert(searchField.value);
     handleSearch(searchField.value);
 }
 

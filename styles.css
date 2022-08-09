@@ -396,11 +396,10 @@ tr:nth-child(even) {
         width: 275px; 
         height: 275px;
     }
-
 }
 
-.table-title {};
+/* .table-title {};
 #iupac-name {};
 #molecular-formula {};
 #molecular-weight {};
-#cid {};
+#cid {}; */
