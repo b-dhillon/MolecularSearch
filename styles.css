@@ -223,7 +223,7 @@ body,
 #search::selection {color: #FFFFFF; background: rgba(0,0,0,0.25);}
 
 .search-field {
-
+    border: none;
 }
   
   
@@ -404,6 +404,3 @@ tr:nth-child(even) {
 #molecular-formula {};
 #molecular-weight {};
 #cid {};
-
-
-.sear
