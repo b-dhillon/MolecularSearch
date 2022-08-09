@@ -151,7 +151,6 @@ function handleSearch(searchedString)
             reader2d.onload = function ()
             {
                 molecule2d = reader2d.result;
-                // console.log(molecule);
                 Display2D(molecule2d);
             };
         })
@@ -177,8 +176,8 @@ function DisplayTable(values)
     cid.innerHTML = values[0]
 }
 
-// searchField.addEventListener('focus', handleSearchFocus);
-// searchField.addEventListener('blur', handleSearchBlur);
+searchField.addEventListener('focus', handleSearchFocus);
+searchField.addEventListener('blur', handleSearchBlur);
 searchField.addEventListener('keydown', handleKeyDown);
 searchBtn.addEventListener('click', () => handleSearch(searchField.value));
 // searchBtn.addEventListener('click', handleKeyDown);
