@@ -67,7 +67,7 @@ function Display3D(_3Dmolecule)
 
 function DisplayTable(values)
 {
-    console.log(values);
+    // console.log(values);
     tableTitle.innerHTML = values[4];
     iupacName.innerHTML = values[3];
     molecularFormula.innerHTML = values[1];
@@ -146,15 +146,13 @@ function handleSearch(searchedString)
             };
         })
 
-    // fetch(`https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/${searchedString}/property/Title,IUPACName,MolecularFormula,MolecularWeight/JSON`)
-    //     .then(res => res.json())
-    //     .then(data =>
-    //     {
-    //         const values = Object.values(data.PropertyTable.Properties[0]);
-    //         DisplayTable(values);
-    //         // tableTitle.innerHTML = values[4];
-    //         // console.log(values);
-    //     })
+    fetch(`https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/${searchedString}/property/Title,IUPACName,MolecularFormula,MolecularWeight/JSON`)
+        .then(res => res.json())
+        .then(data =>
+        {
+            const values = Object.values(data.PropertyTable.Properties[0]);
+            DisplayTable(values);
+        })
 }
 
 
