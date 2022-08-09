@@ -16,7 +16,7 @@ if (mediaQuery.matches)
 else
 {
     size2d = 225;
-    size3d = 275;
+    size3d = 266;
 }
 function Display2D(_2Dmolecule)
 {
@@ -67,12 +67,13 @@ function Display3D(_3Dmolecule)
 // Selected elements:
 const searchEl = document.querySelector(".search-box");
 const searchField = document.querySelector(".search-field2");
-const si = document.querySelector(".search-icon");
 const logoEl = document.querySelector(".logo");
-const goIcon = document.querySelector(".go-icon");
+const searchBtn = document.querySelector(".searchBtn");
 
-const searchBtn = document.querySelector(".searchBtn")
-console.log(searchBtn);
+// const goIcon = document.querySelector(".go-icon");
+// const si = document.querySelector(".search-icon");
+
+// console.log(searchBtn);
 
 // Table elements: 
 const tableTitle = document.querySelector(".table-title");
@@ -84,21 +85,20 @@ const cid = document.getElementById("cid")
 
 
 
-
 // Event Handlers:
 function handleSearchFocus()
 {
     searchEl?.classList.add("border-searching");
-    // si?.classList.add("si-rotate")
     logoEl?.classList.add("logo-rotate")
+    // si?.classList.add("si-rotate")
     // goIcon?.classList.add("go-in")
 }
 
 function handleSearchBlur()
 {
     searchEl?.classList.remove("border-searching");
-    // si?.classList.remove("si-rotate");
     logoEl?.classList.remove("logo-rotate")
+    // si?.classList.remove("si-rotate");
     // goIcon?.classList.remove("go-in")
 }
 
