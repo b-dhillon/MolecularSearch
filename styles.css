@@ -12,7 +12,12 @@ body,
     padding: 0;
     background: #259872;
     color: white;
-    overflow: scroll ;
+    
+}
+
+#root {
+    border: 5px solid yellow; 
+    height: auto !important;
 }
 
 .version--number {
@@ -28,7 +33,7 @@ body,
 
 
 .header--wrapper {
-    position: absolute;
+    position: relative;
     /* top: 2%; */
     height: 16%; 
     padding: 3%;
@@ -60,8 +65,9 @@ body,
 
 .main--wrapper {
     width: 100%; 
-    height: 100%;
-    position: absolute;
+    height: auto;
+    /* height: 100%; */
+    position: relative;
     top: 16%;
     display: flex; 
     flex-direction: column;
@@ -79,6 +85,7 @@ body,
 /* SEARCH COMPONENT */
 .search--wrapper{
     /* height: 10%;  */
+
     width: 100%;
     z-index: 2;
     display: flex; 
@@ -290,6 +297,7 @@ body,
     /* height: 100%; */
     justify-content: center;
     display: flex;
+    margin-bottom: 35px;
     /* border: 1px solid yellow; */
 }
 
