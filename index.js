@@ -88,18 +88,14 @@ const cid = document.getElementById("cid")
 // Event Handlers:
 function handleSearchFocus()
 {
-    searchEl?.classList.add("border-searching");
     logoEl?.classList.add("logo-rotate")
-    // si?.classList.add("si-rotate")
-    // goIcon?.classList.add("go-in")
+    searchEl?.classList.add("border-searching");
 }
 
 function handleSearchBlur()
 {
-    searchEl?.classList.remove("border-searching");
     logoEl?.classList.remove("logo-rotate")
-    // si?.classList.remove("si-rotate");
-    // goIcon?.classList.remove("go-in")
+    searchEl?.classList.remove("border-searching");
 }
 
 function handleGo()
@@ -181,9 +177,6 @@ searchField.addEventListener('blur', handleSearchBlur);
 searchField.addEventListener('keydown', handleKeyDown);
 searchBtn.addEventListener('click', () => handleSearch(searchField.value));
 // searchBtn.addEventListener('click', handleKeyDown);
-
-
-console.log(searchField);
 
 // goIcon.addEventListener('click', () => handleSearch(searchField.value));
 
