@@ -57,10 +57,10 @@ body,
     width: 100%; 
     height: auto;
     will-change: transform;
-    transition: transform 300ms 220ms ease-out;
-    -webkit-transition: transform 300ms 220ms ease-out;
-    -moz-transition: transform 300ms 220ms ease-out;
-    -o-transition: transform 300ms 220ms ease-out;
+    transition: transform 275ms 220ms ease-in-out;
+    -webkit-transition: transform 275ms 220ms ease-in-out;
+    -moz-transition: transform 275ms 220ms ease-in-out;
+    -o-transition: transform 275ms 220ms ease-in-out;
     transform: rotate(0deg);
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
@@ -69,10 +69,10 @@ body,
 
 .logo-rotate {
     will-change: transform;
-    transition: transform 300ms 220ms ease-out;
-    -webkit-transition: transform 300ms 220ms ease-out;
-    -moz-transition: transform 300ms 220ms ease-out;
-    -o-transition: transform 300ms 220ms ease-out;
+    transition: transform 275ms 220ms ease-in-out;
+    -webkit-transition: transform 275ms 220ms ease-in-out;
+    -moz-transition: transform 275ms 220ms ease-in-out;
+    -o-transition: transform 275ms 220ms ease-in-out;
     transform: rotate(90deg);
     -webkit-transform: rotate(90deg);
     -moz-transform: rotate(90deg);
