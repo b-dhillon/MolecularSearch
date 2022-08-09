@@ -10,13 +10,13 @@ let size2d;
 const mediaQuery = window.matchMedia('(min-width: 680px)')
 if (mediaQuery.matches)
 {
-    size3d = 350;
     size2d = 300;
+    size3d = 350;
 }
 else
 {
-    size3d = 320;
     size2d = 225;
+    size3d = 275;
 }
 function Display2D(_2Dmolecule)
 {
