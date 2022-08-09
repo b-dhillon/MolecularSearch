@@ -87,8 +87,6 @@ function handleKeyDown(event)
         event.preventDefault();
 
         // console.log(searchField.value);
-
-        // 👇️ your logic here
         handleSearch(searchField.value);
     }
 };
@@ -178,7 +176,6 @@ function handleSearch(searchedString)
             // tableTitle.innerHTML = values[4];
             // console.log(values);
         })
-
 }
 
 function DisplayTable(values)
@@ -197,8 +194,14 @@ function DisplayTable(values)
 
 // goIcon.addEventListener('click', () => handleSearch(searchField.value));
 
+function handleSearchBtn(event)
+{
+    event.preventDefault();
+    handleSearch(searchField.value);
+}
 
-searchBtn.addEventListener('click', () => handleSearch(searchField.value))
+
+searchBtn.addEventListener('click', handleSearchBtn)
 
 // Display2D();
 // Display3D();
