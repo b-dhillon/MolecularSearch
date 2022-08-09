@@ -196,13 +196,15 @@ function DisplayTable(values)
 
 function handleSearchBtn(event)
 {
-    event.preventDefault();
-    alert(searchField.value);
-    handleSearch(searchField.value);
+    // event.preventDefault();
+    // alert(searchField.value);
+    // handleSearch(searchField.value);
+    tableTitle.innerHTML = 'Worked!'
+
 }
 
 
-searchBtn.addEventListener('click', handleSearchBtn)
+searchBtn.addEventListener('touchend', handleSearchBtn)
 
 // Display2D();
 // Display3D();
