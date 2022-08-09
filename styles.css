@@ -64,6 +64,16 @@ body,
     -o-transition: transform 400ms 220ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
 }
 
+.logo-rotate {
+    will-change: transform;
+    transition: transform 400ms 220ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+    transition-timing-function: ease-in-out;
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+}
+
 .main--wrapper {
     width: 100%; 
     height: auto;
@@ -153,19 +163,8 @@ body,
     pointer-events: none;
     font-size: 1.1em;
 }
-/* .si-rotate {
-    transform: rotate(100deg);
-    -webkit-transform: rotate(100deg);
-    -moz-transform: rotate(100deg);
-    -o-transform: rotate(100deg);
-} */
 
-.logo-rotate {
-    transform: rotate(90deg);
-    -webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -o-transform: rotate(90deg);
-}
+
 
 /* .go-icon {
     color: white;
