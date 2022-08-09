@@ -76,6 +76,7 @@ const logoEl = document.querySelector(".logo");
 const goIcon = document.querySelector(".go-icon");
 
 const searchBtn = document.querySelector(".searchBtn")
+console.log(searchBtn);
 
 // Table elements: 
 const tableTitle = document.querySelector(".table-title");
@@ -183,7 +184,7 @@ function DisplayTable(values)
 // searchField.addEventListener('focus', handleSearchFocus);
 // searchField.addEventListener('blur', handleSearchBlur);
 searchField.addEventListener('keydown', handleKeyDown);
-searchBtn.addEventListener('click', handleKeyDown);
+searchBtn.addEventListener('click', () => handleSearch(searchField.value));
 // searchBtn.addEventListener('click', handleKeyDown);
 
 
