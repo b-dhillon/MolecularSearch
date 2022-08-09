@@ -78,7 +78,7 @@ function DisplayTable(values)
 
 // Search and Logo elements:
 const searchEl = document.querySelector(".search-box");
-const searchField = document.querySelector(".search-field2");
+const searchField = document.querySelector(".search-field");
 const logoEl = document.querySelector(".logo");
 const searchBtn = document.querySelector(".searchBtn");
 
