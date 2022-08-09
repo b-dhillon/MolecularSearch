@@ -6,8 +6,22 @@ let molecule3d;
 let molecule2d;
 let size3d;
 let size2d;
-let searchString;
 
+
+
+
+// Makes 2D & 3D canvases responsive
+const mediaQuery = window.matchMedia('(min-width: 680px)')
+if (mediaQuery.matches)
+{
+    size3d = 350;
+    size2d = 300;
+}
+else
+{
+    size3d = 320;
+    size2d = 225;
+}
 
 // EXPORT THESE!!
 function Display2D(_2Dmolecule)
@@ -53,19 +67,6 @@ function Display3D(_3Dmolecule)
 
     let mol = ChemLib.readMOL(_3Dmolecule);
     display3D.loadMolecule(mol);
-}
-
-// Makes 2D & 3D canvases responsive
-const mediaQuery = window.matchMedia('(min-width: 680px)')
-if (mediaQuery.matches)
-{
-    size3d = 350;
-    size2d = 300;
-}
-else
-{
-    size3d = 320;
-    size2d = 225;
 }
 
 // Selected elements:

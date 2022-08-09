@@ -11,89 +11,88 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Orgo-Oracle</title>
 </head>
+    <body>
+        <div id="root">
+            <div class="app">
+                <h4 class='version--number'>version: 0.0.1</h4>
 
-<body>
-<div id="root">
-    <div class="app">
-        <h4 class='version--number'>version: 0.0.1</h4>
+                <header class='header--wrapper'>
+                    <div class='logo--wrapper'>
+                        <img class='logo' src='/img/logo.png'/>
+                    </div>
+                </header>
 
-        <header class='header--wrapper'>
-            <div class='logo--wrapper'>
-                <img class='logo' src='/img/logo.png'/>
-            </div>
-        </header>
+                <div class='main--wrapper'>
 
-        <div class='main--wrapper'>
+                    <div class="search--wrapper">
 
-            <div class="search--wrapper">
-
-                    <form>
-                        <input type="text" class="search-field2"/>
-                    </form>
-
-
-
-
-                    <!-- <div class="search-box">
-                    <div class="search-icon"><i class="fa fa-search search-icon"></i></div>
-                    <input 
-                    type="text" 
-                    name="search"
-                    placeholder="search" 
-                    id="search" 
-                    autoComplete="off"
-                    class="search-field"
-                        />
-                    
-                    <svg class="search-border" enableBackground="new 0 0 671 111" version="1.1" viewBox="0 0 671 111" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg">
-                        <path class="border" d="m335.5 108.5h-280c-29.3 0-53-23.7-53-53s23.7-53 53-53h280"/>
-                        <path class="border" d="m335.5 108.5h280c29.3 0 53-23.7 53-53s-23.7-53-53-53h-280"/>
-                    </svg>
-                    <div class="go-icon go-in"><i class="fa fa-arrow-right"></i></div>
-                    </div> -->
+                            <form>
+                                <input type="text" class="search-field2"/>
+                            </form>
 
 
 
 
+                            <!-- <div class="search-box">
+                            <div class="search-icon"><i class="fa fa-search search-icon"></i></div>
+                            <input 
+                            type="text" 
+                            name="search"
+                            placeholder="search" 
+                            id="search" 
+                            autoComplete="off"
+                            class="search-field"
+                                />
+                            
+                            <svg class="search-border" enableBackground="new 0 0 671 111" version="1.1" viewBox="0 0 671 111" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg">
+                                <path class="border" d="m335.5 108.5h-280c-29.3 0-53-23.7-53-53s23.7-53 53-53h280"/>
+                                <path class="border" d="m335.5 108.5h280c29.3 0 53-23.7 53-53s-23.7-53-53-53h-280"/>
+                            </svg>
+                            <div class="go-icon go-in"><i class="fa fa-arrow-right"></i></div>
+                            </div> -->
 
-                    <button class="searchBtn">Search</button>
-            </div>
 
 
-            <div class='canvas--wrapper'>
-                <canvas id='display2D'>
-                </canvas>
-                <canvas id='display3D'>
-                </canvas>      
-            </div>
 
-            <div class='table--wrapper'>
-                <div class='table--background'>
-                    <h1 class="table-title">Tylenol</h1>
-                    <table id='demoTable'>
-                        <tr>
-                            <td>IUPAC Name</td>
-                            <td id='iupac-name'>2-acetyloxybenzoic acid</td>
-                        </tr>
-                        <tr>
-                            <td>Molecular Formula</td>
-                            <td id="molecular-formula">C9H8O4</td>
-                        </tr>
-                        <tr>
-                            <td>Molecular Weight</td>
-                            <td id="molecular-weight">180.16 g/mol</td>
-                        </tr>
-                        <tr>
-                            <td>Chemical Identifier</td>
-                            <td id="cid">2244</td>
-                        </tr>
-                    </table>
+
+                            <button class="searchBtn">Search</button>
+                    </div>
+
+
+                    <div class='canvas--wrapper'>
+                        <canvas id='display2D'>
+                        </canvas>
+                        <canvas id='display3D'>
+                        </canvas>      
+                    </div>
+
+                    <div class='table--wrapper'>
+                        <div class='table--background'>
+                            <h1 class="table-title">Tylenol</h1>
+                            <table id='demoTable'>
+                                <tr>
+                                    <td>IUPAC Name</td>
+                                    <td id='iupac-name'>2-acetyloxybenzoic acid</td>
+                                </tr>
+                                <tr>
+                                    <td>Molecular Formula</td>
+                                    <td id="molecular-formula">C9H8O4</td>
+                                </tr>
+                                <tr>
+                                    <td>Molecular Weight</td>
+                                    <td id="molecular-weight">180.16 g/mol</td>
+                                </tr>
+                                <tr>
+                                    <td>Chemical Identifier</td>
+                                    <td id="cid">2244</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-
         </div>
-    </div>
-</div>
-<script type="module" src="index.js"></script>
-</body>
+        <script type="module" src="index.js"></script>
+    </body>
 </html>
