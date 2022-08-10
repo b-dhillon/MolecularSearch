@@ -11,8 +11,8 @@ let size2d;
 const mediaQuery = window.matchMedia('(min-width: 680px)')
 if (mediaQuery.matches)
 {
-    size2d = 300;
-    size3d = 350;
+    size2d = 275;
+    size3d = 325;
 }
 else
 {

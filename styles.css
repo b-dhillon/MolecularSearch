@@ -34,7 +34,6 @@ body,
 
 .header--wrapper {
     position: relative;
-    /* top: 2%; */
     height: 16%; 
     padding: 3%;
     width: 100%; 
@@ -279,7 +278,8 @@ table {
 
 .table--background > h1 {
     font-weight: 300;
-    font-size: 2.3rem;
+    font-size: 2.25rem;
+    padding: 10px;
 }
 
 td {
@@ -304,16 +304,15 @@ tr:nth-child(even) {
 
 @media screen and (min-width: 800px) {
     .header--wrapper {
-        padding: 0 10%;
-        top: 2%; 
+        padding: 2%;
+        /* top: 2%;  */
     }
 
     .logo--wrapper {
         width: 25px; 
-        max-width: 75px;
+        max-width: 85px;
         display: flex;
         flex-grow: 1;
-        margin-right: 20px;
         padding: 1px;
     }
 
@@ -324,13 +323,16 @@ tr:nth-child(even) {
         padding: 0 10%;
         display: flex; 
         flex-direction: column;
+
+        /* border: 1px solid blue;  */
     }
 
     .search--wrapper{
         height: 10%; 
         width: 100%;
-        margin-top: 20px;
         z-index: 2;
+        /* flex-direction: row;
+        justify-content: baseline; */
 
         /* border: 1px solid red; */
     }
@@ -366,7 +368,11 @@ tr:nth-child(even) {
     .searchBtn {
         width: 90px; 
         height: 32px;
-        margin-bottom: 5px;
+        cursor: pointer;
+
+        /* border: 2px solid white;  */
+        /* background: transparent; */
+        /* color: white; */
     }
 
     .canvas--wrapper{
@@ -378,13 +384,13 @@ tr:nth-child(even) {
     }
 
     #display3D {
-        margin: 70px;
-        height: 350px; 
-        width: 350px; 
+        margin: 40px 70px;
+        height: 325px; 
+        width: 325px; 
     }
 
     #display2D {
-        margin: 70px;
+        margin: 40px 70px;
         width: 275px; 
         height: 275px;
     }
