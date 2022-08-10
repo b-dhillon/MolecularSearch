@@ -23,10 +23,10 @@ body,
 .version--number {
     position: absolute; 
     top: 0; 
-    padding: 5px;
+    padding: 3px;
     z-index: 2;
     left: 0; 
-    font-size: 0.6rem;
+    font-size: 0.4rem;
     margin: 0;
 }
 

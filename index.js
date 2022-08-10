@@ -1,4 +1,4 @@
-import ChemLib from './lib/ChemDoodleWeb.js';
+import ChemRender from './lib/chem-render.js';
 
 let reader3d = new FileReader();
 let reader2d = new FileReader();
@@ -22,7 +22,7 @@ else
 
 function Display2D(_2Dmolecule)
 {
-    let display2D = new ChemLib.TransformCanvas('display2D', size2d, size2d, true);
+    let display2D = new ChemRender.TransformCanvas('display2D', size2d, size2d, true);
     display2D.styles.atoms_HBlack_2D = false;
     display2D.styles.atoms_color = 'white';
     display2D.styles.bonds_color = "white";
@@ -35,13 +35,13 @@ function Display2D(_2Dmolecule)
     // display2D.loadMolecule(mol);
     // rotate2D.styles.atoms_font_bold_2D = true;
 
-    let mol = ChemLib.readMOL(_2Dmolecule);
+    let mol = ChemRender.readMOL(_2Dmolecule);
     display2D.loadMolecule(mol);
 }
 
 function Display3D(_3Dmolecule)
 {
-    let display3D = new ChemLib.TransformCanvas('display3D', size3d, size3d, true);
+    let display3D = new ChemRender.TransformCanvas('display3D', size3d, size3d, true);
     display3D.styles.atoms_circles_2D = true;
     display3D.styles.atoms_useJMOLColors = true;
     display3D.styles.atoms_HBlack_2D = false;
@@ -61,7 +61,7 @@ function Display3D(_3Dmolecule)
     // display3D.loadMolecule(mol);
 
 
-    let mol = ChemLib.readMOL(_3Dmolecule);
+    let mol = ChemRender.readMOL(_3Dmolecule);
     display3D.loadMolecule(mol);
 }
 
@@ -100,21 +100,18 @@ function handleSearchFocus()
 
 function handleSearchBlur()
 {
-    logoEl?.classList.remove("logo-rotate")
-    searchEl?.classList.remove("border-searching");
+    logoEl.classList.remove("logo-rotate")
+    searchEl.classList.remove("border-searching");
 }
 
 
 function handleKeyDown(event)
 {
-    console.log('User pressed: ', event.key);
     if (event.key === 'Enter')
     {
         event.preventDefault();
-        console.log(searchField.value);
-
-        // console.log(searchField.value);
         handleSearch(searchField.value);
+        handleSearchBlur();
     }
 };
 
@@ -129,7 +126,6 @@ function handleSearch(searchedString)
             reader3d.onload = function ()
             {
                 molecule3d = reader3d.result;
-                // console.log(molecule);
                 Display3D(molecule3d);
             };
         })
