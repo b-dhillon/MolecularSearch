@@ -248,7 +248,7 @@ body,
 /* TABLE COMPONENT */
 
 .table--wrapper {
-    width: 90%;
+    width: 96%;
     /* height: 100%; */
     justify-content: center;
     display: flex;
@@ -343,7 +343,6 @@ tr:nth-child(even) {
     .table--wrapper {
         display: flex; 
         justify-content: center;
-        /* border: 1px solid red; */
     }
 
     table {
@@ -351,7 +350,7 @@ tr:nth-child(even) {
     }
 
     .table--background {
-        width: 80%;
+        width: 66%;
         margin-top: 20px;
         /* border: 1px solid blue;  */
     }

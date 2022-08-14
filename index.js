@@ -17,7 +17,7 @@ if (mediaQuery.matches)
 }
 else
 {
-    size2d = 225;
+    size2d = 250;
     size3d = 266;
 }
 
