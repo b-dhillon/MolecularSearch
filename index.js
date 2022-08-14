@@ -124,7 +124,7 @@ function handleSearch(searchedString)
     if (call === 0)
     {
         call++;
-        fetch(`https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/tylenol/SDF?record_type=3d`)
+        fetch(`https://pubchem.ncbi.nlm.nih.gov/rest/pug/compoundibuprofen/SDF?record_type=3d`)
             .then(res => { return res.blob() })
             .then(data =>
             {
@@ -136,7 +136,7 @@ function handleSearch(searchedString)
                 };
             })
 
-        fetch(`https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/tylenol/SDF?record_type=2d`)
+        fetch(`https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/ibuprofen/SDF?record_type=2d`)
             .then(res => { return res.blob() })
             .then(data =>
             {
@@ -148,7 +148,7 @@ function handleSearch(searchedString)
                 };
             })
 
-        fetch(`https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/tylenol/property/Title,IUPACName,MolecularFormula,MolecularWeight/JSON`)
+        fetch(`https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/ibuprofen/property/Title,IUPACName,MolecularFormula,MolecularWeight/JSON`)
             .then(res => res.json())
             .then(data =>
             {

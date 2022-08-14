@@ -198,7 +198,6 @@ body,
     font-weight: 400;
     letter-spacing: -0.015em;
     outline: none;
-    text-align: center;
 }
 #search::-webkit-input-placeholder {color: #ffffff5a;}
 #search::-moz-placeholder {color: #FFFFFF;}
