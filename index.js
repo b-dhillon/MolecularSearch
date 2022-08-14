@@ -11,8 +11,8 @@ let size2d;
 const mediaQuery = window.matchMedia('(min-width: 680px)')
 if (mediaQuery.matches)
 {
-    size2d = 275;
-    size3d = 325;
+    size2d = 300;
+    size3d = 300;
 }
 else
 {
@@ -63,6 +63,7 @@ function Display3D(_3Dmolecule)
 
     let mol = ChemRender.readMOL(_3Dmolecule);
     display3D.loadMolecule(mol);
+
 }
 
 function DisplayTable(values)
@@ -100,6 +101,7 @@ function handleSearchFocus()
 
 function handleSearchBlur()
 {
+    searchField.blur();
     logoEl.classList.remove("logo-rotate")
     searchEl.classList.remove("border-searching");
 }
