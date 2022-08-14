@@ -6,6 +6,7 @@ let molecule3d;
 let molecule2d;
 let size3d;
 let size2d;
+let call = 0;
 
 // Makes 2D & 3D canvases responsive
 const mediaQuery = window.matchMedia('(min-width: 680px)')
@@ -120,39 +121,83 @@ function handleKeyDown(event)
 
 function handleSearch(searchedString)
 {
-    fetch(`https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/${searchedString}/SDF?record_type=3d`)
-        .then(res => { return res.blob() })
-        .then(data =>
-        {
-            reader3d.readAsText(data);
-            reader3d.onload = function ()
+    if (call === 0)
+    {
+        call++;
+        fetch(`https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/tylenol/SDF?record_type=3d`)
+            .then(res => { return res.blob() })
+            .then(data =>
             {
-                molecule3d = reader3d.result;
-                Display3D(molecule3d);
-            };
-        })
+                reader3d.readAsText(data);
+                reader3d.onload = function ()
+                {
+                    molecule3d = reader3d.result;
+                    Display3D(molecule3d);
+                };
+            })
 
-    fetch(`https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/${searchedString}/SDF?record_type=2d`)
-        .then(res => { return res.blob() })
-        .then(data =>
-        {
-            reader2d.readAsText(data);
-            reader2d.onload = function ()
+        fetch(`https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/tylenol/SDF?record_type=2d`)
+            .then(res => { return res.blob() })
+            .then(data =>
             {
-                molecule2d = reader2d.result;
-                Display2D(molecule2d);
-            };
-        })
+                reader2d.readAsText(data);
+                reader2d.onload = function ()
+                {
+                    molecule2d = reader2d.result;
+                    Display2D(molecule2d);
+                };
+            })
 
-    fetch(`https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/${searchedString}/property/Title,IUPACName,MolecularFormula,MolecularWeight/JSON`)
-        .then(res => res.json())
-        .then(data =>
-        {
-            const values = Object.values(data.PropertyTable.Properties[0]);
-            DisplayTable(values);
-        })
+        fetch(`https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/tylenol/property/Title,IUPACName,MolecularFormula,MolecularWeight/JSON`)
+            .then(res => res.json())
+            .then(data =>
+            {
+                const values = Object.values(data.PropertyTable.Properties[0]);
+                DisplayTable(values);
+            })
+
+    }
+
+    else
+    {
+        fetch(`https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/${searchedString}/SDF?record_type=3d`)
+            .then(res => { return res.blob() })
+            .then(data =>
+            {
+                reader3d.readAsText(data);
+                reader3d.onload = function ()
+                {
+                    molecule3d = reader3d.result;
+                    Display3D(molecule3d);
+                };
+            })
+
+        fetch(`https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/${searchedString}/SDF?record_type=2d`)
+            .then(res => { return res.blob() })
+            .then(data =>
+            {
+                reader2d.readAsText(data);
+                reader2d.onload = function ()
+                {
+                    molecule2d = reader2d.result;
+                    Display2D(molecule2d);
+                };
+            })
+
+        fetch(`https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/${searchedString}/property/Title,IUPACName,MolecularFormula,MolecularWeight/JSON`)
+            .then(res => res.json())
+            .then(data =>
+            {
+                const values = Object.values(data.PropertyTable.Properties[0]);
+                DisplayTable(values);
+            })
+
+    }
+
+
 }
 
+handleSearch();
 
 // Event Listeners
 searchField.addEventListener('focus', handleSearchFocus);
