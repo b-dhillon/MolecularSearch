@@ -102,6 +102,7 @@ body,
     justify-content: center;
     align-items: center;
     position: relative;
+    top: 10px;
     padding: 0;
     width: 300px;
 }
@@ -302,6 +303,8 @@ tr:nth-child(even) {
 @media screen and (min-width: 800px) {
     .header--wrapper {
         padding: 1% 2%;
+        top: 10px;
+
         /* top: 2%;  */
     }
 

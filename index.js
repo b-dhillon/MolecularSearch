@@ -43,6 +43,7 @@ function Display2D(_2Dmolecule)
 function Display3D(_3Dmolecule)
 {
     let display3D = new ChemRender.TransformCanvas('display3D', size3d, size3d, true);
+    display3D.styles.compass_display = true;
     display3D.styles.atoms_circles_2D = true;
     display3D.styles.atoms_useJMOLColors = true;
     display3D.styles.atoms_HBlack_2D = false;
