@@ -1,35 +1,9 @@
-//
-// ChemDoodle Web Components 9.4.0
-//
-// https://web.chemdoodle.com
-//
-// Copyright 2009-2022 iChemLabs, LLC.  All rights reserved.
-//
-// The ChemDoodle Web Components library is licensed under version 3
-// of the GNU GENERAL PUBLIC LICENSE.
-//
-// You may redistribute it and/or modify it under the terms of the
-// GNU General Public License as published by the Free Software Foundation,
-// either version 3 of the License, or (at your option) any later version.
-//
-// As an exception to the GPL, you may distribute this packed form of
-// the code without the copy of the GPL license normally required,
-// provided you include this license notice and a URL through which
-// recipients can access the corresponding unpacked source code. 
-//
-// This program is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// ChemDoodle Web Components employs 3rd party libraries under the MIT
-// license. For a full list with links to the original source, go to:
-// https://web.chemdoodle.com/installation/download/#libraries
-//
-// Please contact iChemLabs <https://www.ichemlabs.com/contact-us> for
-// alternate licensing options.
-//
-'use strict'; let ChemDoodle = function () { let e = { iChemLabs: {}, informatics: {}, io: {}, lib: {}, notations: {}, structures: {} }; e.structures.d2 = {}; e.structures.d3 = {}; e.getVersion = function () { return "9.4.0" }; return e }();
+'use strict';
+let ChemDoodle = function ()
+{
+    let e = { iChemLabs: {}, informatics: {}, io: {}, lib: {}, notations: {}, structures: {} }; e.structures.d2 = {}; e.structures.d3 = {}; e.getVersion = function () { return "9.4.0" }; return e
+}();
+
 (function (e, p, n)
 {
     (function (e, d) { "object" === typeof module && "object" === typeof module.exports ? module.exports = e.document ? d(e, !0) : function (k) { if (!k.document) throw Error("jQuery requires a window with a document"); return d(k) } : d(e) })("undefined" !== typeof e ? e : this, function (e, d)

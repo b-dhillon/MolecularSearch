@@ -1,4 +1,4 @@
-import ChemRender from './lib/chem-render.js';
+import ChemRender from './chem-render.js';
 
 let reader3d = new FileReader();
 let reader2d = new FileReader();
@@ -83,7 +83,10 @@ function DisplayTable(values)
 const searchEl = document.querySelector(".search-box");
 const searchField = document.querySelector(".search-field");
 const logoEl = document.querySelector(".logo");
-const searchBtn = document.querySelector(".searchBtn");
+const searchBtn = document.querySelector(".go-icon");
+
+// const goIcon = document.querySelector(".go-icon")
+
 
 // Table elements: 
 const tableTitle = document.querySelector(".table-title");
