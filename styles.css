@@ -12,14 +12,10 @@ body,
     padding: 0;
     background: #259872;
     color: white;
-    
 }
-
 #root {
-    /* border: 5px solid yellow;  */
     height: auto !important;
 }
-
 .version--number {
     position: absolute; 
     top: 0; 
@@ -29,8 +25,6 @@ body,
     font-size: 0.33rem;
     margin: 0;
 }
-
-
 .header--wrapper {
     position: relative;
     height: 16%; 
@@ -39,18 +33,13 @@ body,
     display: flex; 
     align-items: center;
     justify-content: center; 
-
-    /* border: 1px solid red; */
 }
-
 .logo--wrapper {
     width: 25px; 
     max-width: 75px;
     display: flex;
     flex-grow: 1;
-    /* margin-right: 15px; */
 }
-
 .logo {
     width: 100%; 
     height: auto;
@@ -64,7 +53,6 @@ body,
     -moz-transform: rotate(0deg);
     -o-transform: rotate(0deg);
 }
-
 .logo-rotate {
     will-change: transform;
     transition: transform 275ms 220ms ease-in-out;
@@ -76,7 +64,6 @@ body,
     -moz-transform: rotate(90deg);
     -o-transform: rotate(90deg);
 }
-
 .main--wrapper {
     width: 100%; 
     height: auto;
@@ -88,11 +75,6 @@ body,
 
     /* border: 1px solid blue; */
 }
-
-
-
-
-
 
 /* SEARCH COMPONENT */
 .search--wrapper{
@@ -106,7 +88,6 @@ body,
     padding: 0;
     width: 300px;
 }
-
 .search--input {
     width: 325px; 
     height: 30px;
@@ -116,12 +97,9 @@ body,
     font-size: 1.1rem;
     margin-bottom: 10px;
 }
-
 .search--input:focus {
     outline-color: white;
-    place-content: "Enter your message!";
 }
-
 .searchBtn {
     margin-top: 10px;
     width: 90px; 
@@ -129,7 +107,6 @@ body,
     border-radius: 15px;
     border: none;
 }
-
 .search-box {
     position: relative;
     width: 100%;
@@ -138,14 +115,12 @@ body,
     border-radius: 120px;
     margin: 0 auto;
 }
-
 .search-border {
     display: block;
     width: 100%;
     max-width: 300px;
     height: 60px;
 }
-
 .go-icon {
     color: white;
     right: 0;
@@ -163,17 +138,12 @@ body,
     line-height: 61px;
     text-align: center;
 }
-
-
-
-
 .search-icon {
     color: white;
     left: 0;
     pointer-events: none;
     font-size: 1.1em;
 }
-
 .border {
     fill: none;
     stroke: #FFFFFF;
@@ -219,23 +189,17 @@ body,
 #search:-moz-placeholder {color: #FFFFFF;}
 #search::-moz-selection {color: #FFFFFF; background: rgba(0,0,0,0.25);}
 #search::selection {color: #FFFFFF; background: rgba(0,0,0,0.25);}
-
 .search-field {
     border: none;
 }
 
-  
-  
-  
 /* CANVAS COMPONENT */
-
 .canvas--wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 8px;
 }
-
 #display3D {
     height: 266px; 
     width: 266px; 
@@ -245,7 +209,6 @@ body,
     box-shadow:  20px 20px 60px #1f8161,
                 -20px -20px 60px #2baf83;
 }
-
 #display2D {
     height: 225px; 
     width: 225px; 
@@ -256,19 +219,12 @@ body,
                 -20px -20px 60px #2baf83;
 }
 
-
-
-
 /* TABLE COMPONENT */
-
 .table--wrapper {
     width: 96%;
-    /* height: 100%; */
     justify-content: center;
     display: flex;
-    /* border: 1px solid yellow; */
 }
-
 .table--background {
     width: 100%;
     border-radius: 50px;
@@ -281,44 +237,28 @@ body,
     box-shadow:  20px 20px 60px #1f8161,
                 -20px -20px 60px #2baf83;
 }
-
 table {
     padding-bottom: 15px;
 }
-
-
 .table--background > h1 {
     font-weight: 300;
     font-size: 2rem;
     padding: 10px;
 }
-
 td {
     padding: 10px 12px;
     border: 1px solid black;
     border-radius: 2px;
 }
-
-
 tr:nth-child(even) {  
     background: #DB5461;
-    /* background: #7785AC;  */
-    /* background: rgba(241, 237, 238, 0.85); */
-    /* background: #E2E8DD;   */
+
 }  
-
-
-
-
-
-
 
 @media screen and (min-width: 800px) {
     .header--wrapper {
         padding: 1% 2%;
         top: 10px;
-
-        /* top: 2%;  */
     }
 
     .logo--wrapper {
@@ -336,8 +276,6 @@ tr:nth-child(even) {
         padding: 0 10%;
         display: flex; 
         flex-direction: column;
-
-        /* border: 1px solid blue;  */
     }
 
     .search--wrapper{
@@ -347,8 +285,6 @@ tr:nth-child(even) {
         flex-direction: row;
         justify-content: baseline;
         align-items: center;
-
-        /* border: 1px solid red; */
     }
 
     .canvas--wrapper {
@@ -369,7 +305,6 @@ tr:nth-child(even) {
     .table--background {
         width: 66%;
         margin-top: 20px;
-        /* border: 1px solid blue;  */
     }
 
     #search {
@@ -390,9 +325,7 @@ tr:nth-child(even) {
     .search-box {
         width: 300px;
         margin: 0;
-        /* margin-left: 90px; */
     }
-    
     
     .search-border {
         display: block;
@@ -408,10 +341,6 @@ tr:nth-child(even) {
         margin: 5px;
         margin-left: 10px;
         cursor: pointer;
-
-        /* border: 2px solid white;  */
-        /* background: transparent; */
-        /* color: white; */
     }
 
     .canvas--wrapper{
@@ -434,9 +363,3 @@ tr:nth-child(even) {
         height: 300px;
     }
 }
-
-/* .table-title {};
-#iupac-name {};
-#molecular-formula {};
-#molecular-weight {};
-#cid {}; */
