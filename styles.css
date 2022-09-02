@@ -15,15 +15,6 @@ body,
 #root {
     height: auto !important;
 }
-.version--number {
-    position: absolute; 
-    top: 0; 
-    padding: 1px;
-    z-index: 2;
-    left: 0; 
-    font-size: 0.33rem;
-    margin: 0;
-}
 .header--wrapper {
     position: relative;
     height: 16%; 
@@ -71,8 +62,6 @@ body,
     display: flex; 
     flex-direction: column;
     align-items: center;
-
-    /* border: 1px solid blue; */
 }
 
 /* SEARCH COMPONENT */
@@ -248,7 +237,6 @@ td {
 }
 tr:nth-child(even) {  
     background: #DB5461;
-
 }  
 
 @media screen and (min-width: 800px) {
@@ -283,7 +271,6 @@ tr:nth-child(even) {
         display: flex;
         flex-direction: row;
     }
-
     .table--wrapper {
         display: flex; 
         justify-content: center;

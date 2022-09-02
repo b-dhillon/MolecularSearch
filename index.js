@@ -1,5 +1,6 @@
 import ChemRender from './chem-render.js';
 
+// Globals:
 let reader3d = new FileReader();
 let reader2d = new FileReader();
 let molecule3d;
