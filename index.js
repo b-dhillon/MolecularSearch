@@ -1,4 +1,4 @@
-import ChemRender from './chem-render.js';
+import ChemRender from './lib/chem-render.js';
 
 // Globals:
 let reader3d = new FileReader();
