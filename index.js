@@ -71,7 +71,6 @@ function Display3D(_3Dmolecule)
 
 function DisplayTable(values)
 {
-    // console.log(values);
     tableTitle.innerHTML = values[4];
     iupacName.innerHTML = values[3];
     molecularFormula.innerHTML = values[1];
@@ -79,13 +78,11 @@ function DisplayTable(values)
     cid.innerHTML = values[0]
 }
 
-
 // Search and Logo elements:
 const searchEl = document.querySelector(".search-box");
 const searchField = document.querySelector(".search-field");
 const logoEl = document.querySelector(".logo");
 const searchBtn = document.querySelector(".go-icon");
-
 // const goIcon = document.querySelector(".go-icon")
 
 
@@ -122,7 +119,6 @@ function handleKeyDown(event)
         handleSearchBlur();
     }
 };
-
 
 function handleSearch(searchedString)
 {
