@@ -1,9 +1,21 @@
 # MyLittleMolecules
 
-### Project Description:
-- MyLittleMolecules is a web application. Specifically it is an eLearning minimum viable product (mvp). It is designed to teach math & science by visualizing abstract concepts using 3D models. The app in its current form focuses on carbon crystals (carbon is the only atom with 6 protons), however this framework can be applied to teach any STEM subject. 
 ### Live Build: 
 - [https://MyLittleMolecules.com](https://MyLittleMolecules.com)
+
+### Project Description:
+- MyLittleMolecules.com is a chemical visualization tool. It is built for university organic chemistry and biochemistry students. As seen below, the user inputs the name of a molecule and the application returns a 2D and 3D rendering of the molecular structure. A few quick facts about the molecule are returned as well, formatted into a table and displayed at the bottom.
+
+https://user-images.githubusercontent.com/88413313/189430849-31206bf8-47a5-4732-bf3f-416b3e942300.mp4
+
+The search input is quite robust. The user can input either a systematic chemical name such as dihydrogen monoxide, or just use the common name, water.
+
+https://user-images.githubusercontent.com/88413313/189447139-cc43794c-7eda-4e6b-b3aa-6a4bc2cd5e1e.mp4
+
+The API responds well to common household molecular names as well, like sugar, vanilla, vinegar etc. And the application is mobile friendly too, allowing students to carry their little molecules around in their little pockets.
+
+https://user-images.githubusercontent.com/88413313/189447234-e7e3ff3f-6864-4df6-9d3e-e18b24af7dc9.mp4
+
 
 ## Application Structure:
 ### File System:
@@ -19,16 +31,8 @@
         ├── README.md
         └── todo.md
 ```
-
 ### Architecture:
-MyLittleMolecules is a web applicayion built using vanilla JavaScript. This design allows for the application to be run on any browser, making the app inherently cross platform. The app runs well on desktops, laptops, and tablets, casting a wide net for users of all types.
-
-### User Interface:
-
-https://user-images.githubusercontent.com/88413313/189430849-31206bf8-47a5-4732-bf3f-416b3e942300.mp4
-
-
-<img src="./img/ui-1.png" style="width:500px;"/>
+MyLittleMolecules is a web application built using vanilla JavaScript. This design allows for the application to be run on any browser, making the app inherently cross platform. The app runs well on desktops, laptops, tablets, and phones, casting a wide net for users of all types.
 
 
 ### Built With:
