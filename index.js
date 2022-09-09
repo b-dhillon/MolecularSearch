@@ -1,4 +1,4 @@
-import Render from './lib/render.js';
+import Render from './render.js';
 
 // Globals:
 let reader3d = new FileReader();
