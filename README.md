@@ -23,12 +23,13 @@
 ### Architecture:
 MyLittleMolecules is a web applicayion built using vanilla JavaScript. This design allows for the application to be run on any browser, making the app inherently cross platform. The app runs well on desktops, laptops, and tablets, casting a wide net for users of all types.
 
-### User Interface Screenshots:
+### User Interface:
+
+https://user-images.githubusercontent.com/88413313/189430849-31206bf8-47a5-4732-bf3f-416b3e942300.mp4
+
 
 <img src="./img/ui-1.png" style="width:500px;"/>
-<img src="./img/ui-2.png" style="width:500px;"/>
-<img src="./img/ui-3.png" style="width:500px;"/>
-<img src="./img/ui-4.jpg" style="width:500px;"/>
+
 
 ### Built With:
 - Vanilla JavaScript
