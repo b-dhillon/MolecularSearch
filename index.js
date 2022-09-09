@@ -1,4 +1,4 @@
-import ChemRender from './lib/chem-render.js';
+import Render from './lib/render.js';
 
 // Globals:
 let reader3d = new FileReader();
@@ -24,7 +24,7 @@ else
 
 function Display2D(_2Dmolecule)
 {
-    let display2D = new ChemRender.TransformCanvas('display2D', size2d, size2d, true);
+    let display2D = new Render.TransformCanvas('display2D', size2d, size2d, true);
     display2D.styles.atoms_HBlack_2D = false;
     display2D.styles.atoms_color = 'white';
     display2D.styles.bonds_color = "white";
@@ -32,18 +32,13 @@ function Display2D(_2Dmolecule)
     display2D.styles.atoms_displayTerminalCarbonLabels_2D = true;
     display2D.styles.backgroundColor = '#259872';
 
-    // let pyridineMolFile = 'Molecule Name\n  CHEMDOOD01011121543D 0   0.00000     0.00000     0\n[Insert Comment Here]\n  6  6  0  0  0  0  0  0  0  0  1 V2000\n    0.0000    1.0000    0.0000   N 0  0  0  0  0  0  0  0  0  0  0  0\n   -0.8660    0.5000    0.0000   C 0  0  0  0  0  0  0  0  0  0  0  0\n   -0.8660   -0.5000    0.0000   C 0  0  0  0  0  0  0  0  0  0  0  0\n    0.0000   -1.0000    0.0000   C 0  0  0  0  0  0  0  0  0  0  0  0\n    0.8660   -0.5000    0.0000   C 0  0  0  0  0  0  0  0  0  0  0  0\n    0.8660    0.5000    0.0000   C 0  0  0  0  0  0  0  0  0  0  0  0\n  1  2  2  0  0  0  0\n  2  3  1  0  0  0  0\n  3  4  2  0  0  0  0\n  4  5  1  0  0  0  0\n  5  6  2  0  0  0  0\n  6  1  1  0  0  0  0\nM  END';
-    // let mol = ChemLib.readMOL(pyridineMolFile);
-    // display2D.loadMolecule(mol);
-    // rotate2D.styles.atoms_font_bold_2D = true;
-
-    let mol = ChemRender.readMOL(_2Dmolecule);
-    display2D.loadMolecule(mol);
+    let molecule = Render.readMOL(_2Dmolecule);
+    display2D.loadMolecule(molecule);
 }
 
 function Display3D(_3Dmolecule)
 {
-    let display3D = new ChemRender.TransformCanvas('display3D', size3d, size3d, true);
+    let display3D = new Render.TransformCanvas('display3D', size3d, size3d, true);
     display3D.styles.compass_display = true;
     display3D.styles.atoms_circles_2D = true;
     display3D.styles.atoms_useJMOLColors = true;
@@ -59,14 +54,8 @@ function Display3D(_3Dmolecule)
         this.oldDrag(e);
     }
 
-    // let pyridineMolFile = 'Molecule Name\n  CHEMDOOD01011121543D 0   0.00000     0.00000     0\n[Insert Comment Here]\n  6  6  0  0  0  0  0  0  0  0  1 V2000\n    0.0000    1.0000    0.0000   N 0  0  0  0  0  0  0  0  0  0  0  0\n   -0.8660    0.5000    0.0000   C 0  0  0  0  0  0  0  0  0  0  0  0\n   -0.8660   -0.5000    0.0000   C 0  0  0  0  0  0  0  0  0  0  0  0\n    0.0000   -1.0000    0.0000   C 0  0  0  0  0  0  0  0  0  0  0  0\n    0.8660   -0.5000    0.0000   C 0  0  0  0  0  0  0  0  0  0  0  0\n    0.8660    0.5000    0.0000   C 0  0  0  0  0  0  0  0  0  0  0  0\n  1  2  2  0  0  0  0\n  2  3  1  0  0  0  0\n  3  4  2  0  0  0  0\n  4  5  1  0  0  0  0\n  5  6  2  0  0  0  0\n  6  1  1  0  0  0  0\nM  END';
-    // let mol = ChemLib.readMOL(pyridineMolFile);
-    // display3D.loadMolecule(mol);
-
-
-    let mol = ChemRender.readMOL(_3Dmolecule);
-    display3D.loadMolecule(mol);
-
+    let molecule = Render.readMOL(_3Dmolecule);
+    display3D.loadMolecule(molecule);
 }
 
 function DisplayTable(values)
