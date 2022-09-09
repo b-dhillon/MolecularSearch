@@ -238,7 +238,6 @@ td {
 tr:nth-child(even) {  
     background: #DB5461;
 }  
-
 @media screen and (min-width: 800px) {
     .header--wrapper {
         padding: 1% 2%;

@@ -22,6 +22,7 @@ else
     size3d = 266;
 }
 
+// Renders 2D Molecule based on sdf file passed in
 function Display2D(_2Dmolecule)
 {
     let display2D = new Render.TransformCanvas('display2D', size2d, size2d, true);
@@ -36,6 +37,8 @@ function Display2D(_2Dmolecule)
     display2D.loadMolecule(molecule);
 }
 
+
+// Renders 3D Molecule based on sdf file passed in
 function Display3D(_3Dmolecule)
 {
     let display3D = new Render.TransformCanvas('display3D', size3d, size3d, true);
@@ -58,6 +61,7 @@ function Display3D(_3Dmolecule)
     display3D.loadMolecule(molecule);
 }
 
+// Renders table of properties based on the json thats returned from the searched molecule 
 function DisplayTable(values)
 {
     tableTitle.innerHTML = values[4];
