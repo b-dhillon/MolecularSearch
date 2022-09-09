@@ -31,13 +31,10 @@ https://user-images.githubusercontent.com/88413313/189447234-e7e3ff3f-6864-4df6-
         ├── README.md
         └── todo.md
 ```
-### Architecture:
-MyLittleMolecules is a web application built using vanilla JavaScript. This design allows for the application to be run on any browser, making the app inherently cross platform. The app runs well on desktops, laptops, tablets, and phones, casting a wide net for users of all types.
-
 
 ### Built With:
-- Vanilla JavaScript
-- WebGL
+- vanilla JavaScript
+- ChemDoodle JavaScript Library
 - CSS
 - HTML
 
@@ -48,23 +45,17 @@ These instructions will get you a copy of the project up and running on your loc
 Instructions:
 1. Download the source code by clicking the green "code" button at the top of this README file and click "Download Zip"  
 
-    <!-- ![image](src/images/download-readme.jpg) -->
-
-    <img src="./src/images/download-readme.jpg" style="width:300px;"/>
+    <img src="./img/download-readme.jpg" style="width:300px;"/>
 
 2. Next, using the command line, naviagate to the project directory.
     ```bash
     cd MyLittleMolecules.com-master
     ``` 
-3. Once you're in the project directory, install dependencies with:
+3. Once you're in the project directory, boot up a development server from the terminal with the following command:
     ```bash
-    npm install
+    live server
     ``` 
-4. After dependecies have finished installing, boot up a development server from the terminal with the following command: 
-    ```bash
-    npm start
-    ``` 
-5. Happy hacking!
+4. Happy hacking!
 
 
 
