@@ -17,28 +17,6 @@ The application is mobile friendly too, allowing students to carry their little 
 https://user-images.githubusercontent.com/88413313/189447234-e7e3ff3f-6864-4df6-9d3e-e18b24af7dc9.mp4
 
 
-## Application Structure:
-### File System:
-```
-    .
-    └── MyLittleMolecules.com-master/
-        ├── img
-        ├── lib/
-        │   └── render.js
-        ├── index.html
-        ├── index.js
-        ├── styles.css
-        ├── README.md
-        └── todo.md
-```
-
-### Built With:
-- vanilla JavaScript
-- ChemDoodle JavaScript Library
-- CSS
-- HTML
-
-
 ## Development Environment Set-up:
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
@@ -79,4 +57,3 @@ GNU General Public License for more details.
 You should have received a copy of the GNU Affero General Public License
 along with MyLittleMolecules.  If not, see <http://www.gnu.org/licenses/>.
 ```
-## Acknowledgements:
