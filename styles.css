@@ -9,7 +9,10 @@ body,
     height: 100%;
     margin: 0;
     padding: 0;
-    background: #259872;
+    /* background: #259872; */
+    /* background: #e0e0e0; */
+    background: #141414;
+
     color: white;
 }
 #root {
@@ -83,6 +86,7 @@ body,
     font-size: 1.1rem;
     margin-bottom: 10px;
 }
+
 .search--input:focus {
     outline-color: white;
 }
@@ -174,6 +178,11 @@ body,
 .search-field {
     border: none;
 }
+.search-field::selection {
+    background: #DB5461 !important;
+}
+
+
 .canvas--wrapper {
     display: flex;
     flex-direction: column;
@@ -184,19 +193,41 @@ body,
     height: 266px; 
     width: 266px; 
     margin: 30px 0;
-    border-radius: 50px;
+    /* border-radius: 50px;
     background: #259872;
     box-shadow:  20px 20px 60px #1f8161,
-                -20px -20px 60px #2baf83;
+                -20px -20px 60px #2baf83; */
+
+    /* border-radius: 46px;
+    background: #e0e0e0;
+    box-shadow:  9px 9px 18px #676767,
+                    -9px -9px 18px #ffffff; */
+
+
+    border-radius: 40px;
+    background: #141414 !important;
+
+    box-shadow:  -9px -9px 9px #080808,
+                    9px 9px 9px #202020;
 }
 #display2D {
     height: 225px; 
     width: 225px; 
     margin: 30px;
-    border-radius: 50px;
+    /* border-radius: 50px;
     background: #259872;
     box-shadow:  20px 20px 60px #1f8161,
-                -20px -20px 60px #2baf83;
+                -20px -20px 60px #2baf83; */
+
+    /* border-radius: 46px;
+    background: #e0e0e0;
+    box-shadow:  9px 9px 18px #676767,
+    -9px -9px 18px #ffffff; */
+
+    border-radius: 40px;
+    background: #141414 !important;
+    box-shadow:  -9px -9px 9px #080808,
+                9px 9px 9px #202020;
 }
 .table--wrapper {
     width: 96%;
@@ -211,9 +242,18 @@ body,
     flex-direction: column;
     align-items: center;
     padding: 0 10px 20px 10px;
-    background: #259872;
-    box-shadow:  20px 20px 60px #1f8161,
-                -20px -20px 60px #2baf83;
+    /* background: #259872; */
+    /* box-shadow:  20px 20px 60px #1f8161,
+                -20px -20px 60px #2baf83; */
+    /* 
+    border-radius: 46px;
+    box-shadow:  9px 9px 18px #676767,
+                    -9px -9px 18px #ffffff; */
+    border-radius: 40px;
+    background: #141414;
+    box-shadow:  -9px -9px 9px #080808,
+                9px 9px 9px #202020;
+
 }
 table {
     padding-bottom: 15px;

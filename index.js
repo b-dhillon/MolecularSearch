@@ -32,7 +32,7 @@ function Display2D(_2Dmolecule)
     display2D.styles.bonds_color = "white";
     display2D.styles.atoms_font_size_2D = 8;
     display2D.styles.atoms_displayTerminalCarbonLabels_2D = true;
-    display2D.styles.backgroundColor = '#259872';
+    display2D.styles.backgroundColor = '#141414';
 
     let molecule = Render.readMOL(_2Dmolecule);
     display2D.loadMolecule(molecule);
@@ -46,9 +46,11 @@ function Display3D(_3Dmolecule)
     display3D.styles.compass_display = true;
     display3D.styles.atoms_circles_2D = true;
     display3D.styles.atoms_useJMOLColors = true;
+    display3D.styles.bonds_color = "white";
+
     display3D.styles.atoms_HBlack_2D = false;
     display3D.styles.bonds_symmetrical_2D = true;
-    display3D.styles.backgroundColor = '#259872';
+    display3D.styles.backgroundColor = '#141414';
     display3D.dragPath = [];
     display3D.oldDrag = display3D.drag;
 
@@ -119,7 +121,7 @@ function handleSearch(searchedString)
     if (call === 0)
     {
         call++;
-        fetch(`https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/ibuprofen/SDF?record_type=3d`)
+        fetch(`https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/Penicillin G/SDF?record_type=3d`)
             .then(res => { return res.blob() })
             .then(data =>
             {
@@ -131,7 +133,7 @@ function handleSearch(searchedString)
                 };
             })
 
-        fetch(`https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/ibuprofen/SDF?record_type=2d`)
+        fetch(`https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/Penicillin G/SDF?record_type=2d`)
             .then(res => { return res.blob() })
             .then(data =>
             {
@@ -143,7 +145,7 @@ function handleSearch(searchedString)
                 };
             })
 
-        fetch(`https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/ibuprofen/property/Title,IUPACName,MolecularFormula,MolecularWeight/JSON`)
+        fetch(`https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/Penicillin G/property/Title,IUPACName,MolecularFormula,MolecularWeight/JSON`)
             .then(res => res.json())
             .then(data =>
             {
