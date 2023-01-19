@@ -26,17 +26,23 @@ else
 // Renders 2D Molecule based on sdf file passed in
 function Display2D(_2Dmolecule)
 {
-    let display2D = new Render.TransformCanvas('display2D', size2d, size2d, true);
+    let display2D = new Render.TransformCanvas('display2D', size2d, size2d, false);
     display2D.styles.atoms_HBlack_2D = false;
     display2D.styles.atoms_color = 'white';
     display2D.styles.bonds_color = "white";
     display2D.styles.atoms_font_size_2D = 8;
     display2D.styles.atoms_displayTerminalCarbonLabels_2D = true;
     display2D.styles.backgroundColor = '#141414';
+    // display2D.styles.atoms_implicitHydrogens_2D = false;
+
 
     let molecule = Render.readMOL(_2Dmolecule);
+    // let HydrogenReducer = new Render.informatics.HydrogenDeducer;
+    // HydrogenReducer.removeHydrogens(molecule, false);
     display2D.loadMolecule(molecule);
+
 }
+
 
 
 // Renders 3D Molecule based on sdf file passed in
