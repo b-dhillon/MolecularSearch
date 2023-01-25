@@ -127,7 +127,7 @@ function handleSearch(searchedString)
     if (call === 0)
     {
         call++;
-        fetch(`https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/Penicillin G/SDF?record_type=3d`)
+        fetch(`https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/ATP G/SDF?record_type=3d`)
             .then(res => { return res.blob() })
             .then(data =>
             {
@@ -139,7 +139,7 @@ function handleSearch(searchedString)
                 };
             })
 
-        fetch(`https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/Penicillin G/SDF?record_type=2d`)
+        fetch(`https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/ATP G/SDF?record_type=2d`)
             .then(res => { return res.blob() })
             .then(data =>
             {
@@ -151,7 +151,7 @@ function handleSearch(searchedString)
                 };
             })
 
-        fetch(`https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/Penicillin G/property/Title,IUPACName,MolecularFormula,MolecularWeight/JSON`)
+        fetch(`https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/ATP G/property/Title,IUPACName,MolecularFormula,MolecularWeight/JSON`)
             .then(res => res.json())
             .then(data =>
             {
