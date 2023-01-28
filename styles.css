@@ -76,6 +76,7 @@ body,
     top: 10px;
     padding: 0;
     width: 300px;
+
 }
 .search--input {
     width: 325px; 
@@ -168,6 +169,8 @@ body,
     font-weight: 400;
     letter-spacing: -0.015em;
     outline: none;
+    text-align: center;
+
 }
 #search::-webkit-input-placeholder {color: #ffffff5a;}
 #search::-moz-placeholder {color: #FFFFFF;}
@@ -316,6 +319,7 @@ tr:nth-child(even) {
     }
     #search {
         font-size: 1.33em;
+        text-align: left;
     }
     .search--input {
         width: 300px; 

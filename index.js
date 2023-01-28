@@ -60,12 +60,17 @@ function Display3D(_3Dmolecule) {
   display3D.loadMolecule(molecule);
 }
 
+const tableTitle = document.querySelector('.table-title');
 function DisplayTable(values) {
   tableTitle.innerHTML = values[4];
   iupacName.innerHTML = values[3];
   molecularFormula.innerHTML = values[1];
   molecularWeight.innerHTML = values[2];
   cid.innerHTML = values[0];
+  // Add table title responsiveness:
+  //   if (tableTitle.innerHTML.length > 10) {
+  //     tableTitle.styles.fontSize = 'smaller';
+  //   }
 }
 
 // Search and Logo elements:
@@ -75,7 +80,6 @@ const logoEl = document.querySelector('.logo');
 const searchBtn = document.querySelector('.go-icon');
 
 // Table elements:
-const tableTitle = document.querySelector('.table-title');
 const iupacName = document.getElementById('iupac-name');
 const molecularFormula = document.getElementById('molecular-formula');
 const molecularWeight = document.getElementById('molecular-weight');
