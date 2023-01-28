@@ -109,7 +109,7 @@ function handleSearch(searchedString) {
   if (call === 0) {
     call++;
     fetch(
-      `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/Uracil/SDF?record_type=3d`
+      `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/ATP/SDF?record_type=3d`
     )
       .then((res) => {
         return res.blob();
@@ -123,7 +123,7 @@ function handleSearch(searchedString) {
       });
 
     fetch(
-      `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/Uracil/SDF?record_type=2d`
+      `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/ATP/SDF?record_type=2d`
     )
       .then((res) => {
         return res.blob();
@@ -137,7 +137,7 @@ function handleSearch(searchedString) {
       });
 
     fetch(
-      `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/Uracil/property/Title,IUPACName,MolecularFormula,MolecularWeight/JSON`
+      `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/ATP/property/Title,IUPACName,MolecularFormula,MolecularWeight/JSON`
     )
       .then((res) => res.json())
       .then((data) => {
