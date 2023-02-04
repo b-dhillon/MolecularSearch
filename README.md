@@ -8,11 +8,11 @@
 
 https://user-images.githubusercontent.com/88413313/189430849-31206bf8-47a5-4732-bf3f-416b3e942300.mp4
 
-The search input is quite robust. The user can input either a systematic chemical name such as dihydrogen monoxide, or use the common name water. The API responds well to common household molecular names too like sugar, vanilla, vinegar etc.
+The search input is quite robust. The user can input either a systematic chemical name such as dihydrogen monoxide, or use the common name, water. The API responds well to common household molecular names too, like sugar, vanilla, vinegar, etc...
 
 https://user-images.githubusercontent.com/88413313/189447139-cc43794c-7eda-4e6b-b3aa-6a4bc2cd5e1e.mp4
 
-The application is mobile friendly too, allowing students to carry their little molecules around in their little pockets.
+The application is mobile friendly, allowing students to carry their little molecules around in their little pockets.
 
 https://user-images.githubusercontent.com/88413313/189447234-e7e3ff3f-6864-4df6-9d3e-e18b24af7dc9.mp4
 
