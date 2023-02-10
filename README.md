@@ -38,7 +38,7 @@ Instructions:
 
 
 ## Authors:
-- B. Dhillon - Designer && Developer
+- Bhavandeep Dhillon
 
 ## License:
 ```
