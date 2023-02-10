@@ -12,14 +12,19 @@ let call = 0;
 
 // responsive canvases
 const mediaQuery = window.matchMedia('(min-width: 680px)');
-if (mediaQuery.matches) {
+if (mediaQuery.matches)
+{
   size2d = 300;
   size3d = 300;
-} else {
+}
+else
+{
   size2d = 250;
   size3d = 266;
 }
-function Display2D(_2Dmolecule) {
+
+function Display2D(_2Dmolecule)
+{
   let molecule = Render.readMOL(_2Dmolecule);
   let display2D = new Render.TransformCanvas(
     'display2D',
@@ -40,7 +45,8 @@ function Display2D(_2Dmolecule) {
   // HydrogenReducer.removeHydrogens(molecule, false);
 }
 
-function Display3D(_3Dmolecule) {
+function Display3D(_3Dmolecule)
+{
   let molecule = Render.readMOL(_3Dmolecule);
   let display3D = new Render.TransformCanvas('display3D', size3d, size3d, true);
   display3D.styles.compass_display = true;
@@ -52,7 +58,8 @@ function Display3D(_3Dmolecule) {
   display3D.styles.backgroundColor = '#141414';
   display3D.dragPath = [];
   display3D.oldDrag = display3D.drag;
-  display3D.drag = function (e) {
+  display3D.drag = function (e)
+  {
     this.dragPath[display3D.dragPath.length] = e.p;
     this.oldDrag(e);
   };
@@ -61,7 +68,8 @@ function Display3D(_3Dmolecule) {
 }
 
 const tableTitle = document.querySelector('.table-title');
-function DisplayTable(values) {
+function DisplayTable(values)
+{
   tableTitle.innerHTML = values[4];
   iupacName.innerHTML = values[3];
   molecularFormula.innerHTML = values[1];
@@ -86,37 +94,46 @@ const molecularWeight = document.getElementById('molecular-weight');
 const cid = document.getElementById('cid');
 
 // Event Handlers:
-function handleSearchFocus() {
+function handleSearchFocus()
+{
   logoEl.classList.add('logo-rotate');
   searchEl.classList.add('border-searching');
 }
 
-function handleSearchBlur() {
+function handleSearchBlur()
+{
   searchField.blur();
   logoEl.classList.remove('logo-rotate');
   searchEl.classList.remove('border-searching');
 }
 
-function handleKeyDown(event) {
-  if (event.key === 'Enter') {
+function handleKeyDown(event)
+{
+  if (event.key === 'Enter')
+  {
     event.preventDefault();
     handleSearch(searchField.value);
     handleSearchBlur();
   }
 }
 
-function handleSearch(searchedString) {
-  if (call === 0) {
+function handleSearch(searchedString)
+{
+  if (call === 0)
+  {
     call++;
     fetch(
       `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/ATP/SDF?record_type=3d`
     )
-      .then((res) => {
+      .then((res) =>
+      {
         return res.blob();
       })
-      .then((data) => {
+      .then((data) =>
+      {
         reader3d.readAsText(data);
-        reader3d.onload = function () {
+        reader3d.onload = function ()
+        {
           molecule3d = reader3d.result;
           Display3D(molecule3d);
         };
@@ -125,12 +142,15 @@ function handleSearch(searchedString) {
     fetch(
       `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/ATP/SDF?record_type=2d`
     )
-      .then((res) => {
+      .then((res) =>
+      {
         return res.blob();
       })
-      .then((data) => {
+      .then((data) =>
+      {
         reader2d.readAsText(data);
-        reader2d.onload = function () {
+        reader2d.onload = function ()
+        {
           molecule2d = reader2d.result;
           Display2D(molecule2d);
         };
@@ -140,20 +160,25 @@ function handleSearch(searchedString) {
       `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/ATP/property/Title,IUPACName,MolecularFormula,MolecularWeight/JSON`
     )
       .then((res) => res.json())
-      .then((data) => {
+      .then((data) =>
+      {
         const values = Object.values(data.PropertyTable.Properties[0]);
         DisplayTable(values);
       });
-  } else {
+  } else
+  {
     fetch(
       `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/${searchedString}/SDF?record_type=3d`
     )
-      .then((res) => {
+      .then((res) =>
+      {
         return res.blob();
       })
-      .then((data) => {
+      .then((data) =>
+      {
         reader3d.readAsText(data);
-        reader3d.onload = function () {
+        reader3d.onload = function ()
+        {
           molecule3d = reader3d.result;
           Display3D(molecule3d);
         };
@@ -162,12 +187,15 @@ function handleSearch(searchedString) {
     fetch(
       `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/${searchedString}/SDF?record_type=2d`
     )
-      .then((res) => {
+      .then((res) =>
+      {
         return res.blob();
       })
-      .then((data) => {
+      .then((data) =>
+      {
         reader2d.readAsText(data);
-        reader2d.onload = function () {
+        reader2d.onload = function ()
+        {
           molecule2d = reader2d.result;
           Display2D(molecule2d);
         };
@@ -177,7 +205,8 @@ function handleSearch(searchedString) {
       `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/${searchedString}/property/Title,IUPACName,MolecularFormula,MolecularWeight/JSON`
     )
       .then((res) => res.json())
-      .then((data) => {
+      .then((data) =>
+      {
         const values = Object.values(data.PropertyTable.Properties[0]);
         DisplayTable(values);
       });
