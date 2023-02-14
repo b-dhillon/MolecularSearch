@@ -38,7 +38,6 @@ function Display2D(_2Dmolecule)
   display2D.styles.atoms_font_size_2D = 8;
   display2D.styles.atoms_displayTerminalCarbonLabels_2D = true;
   display2D.styles.backgroundColor = '#141414';
-
   display2D.loadMolecule(molecule);
   // display2D.styles.atoms_implicitHydrogens_2D = false;
   // let HydrogenReducer = new Render.informatics.HydrogenDeducer;
@@ -81,6 +80,34 @@ function DisplayTable(values)
   //   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Search and Logo elements:
 const searchEl = document.querySelector('.search-box');
 const searchField = document.querySelector('.search-field');
@@ -107,15 +134,7 @@ function handleSearchBlur()
   searchEl.classList.remove('border-searching');
 }
 
-function handleKeyDown(event)
-{
-  if (event.key === 'Enter')
-  {
-    event.preventDefault();
-    handleSearch(searchField.value);
-    handleSearchBlur();
-  }
-}
+
 
 function handleSearch(searchedString)
 {
@@ -213,13 +232,179 @@ function handleSearch(searchedString)
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+import { Configuration, OpenAIApi } from "openai";
+
+const configuration = new Configuration({
+  apiKey: process.env.OPENAI_API_KEY,
+});
+
+const openai = new OpenAIApi(configuration);
+
+async function generate(req, res)
+{
+  if (!configuration.apiKey)
+  {
+    res.status(500).json({
+      error: {
+        message: "OpenAI API key not configured, please follow instructions in README.md",
+      }
+    });
+    return;
+  }
+
+  const molecule = req.body.molecule || '';
+  if (molecule.trim().length === 0)
+  {
+    res.status(400).json({
+      error: {
+        message: "Please enter a valid molecule",
+      }
+    });
+    return;
+  }
+
+  try
+  {
+    const completion = await openai.createCompletion({
+      model: "text-davinci-003",
+      // model: "text-ada-001	",
+      prompt: generatePrompt(molecule),
+      temperature: 0.2,
+      max_tokens: 150,
+    });
+    res.status(200).json({ result: completion.data.choices[0].text });
+  } catch (error)
+  {
+    // Consider adjusting the error handling logic for your use case
+    if (error.response)
+    {
+      console.error(error.response.status, error.response.data);
+      res.status(error.response.status).json(error.response.data);
+    } else
+    {
+      console.error(`Error with OpenAI API request: ${error.message}`);
+      res.status(500).json({
+        error: {
+          message: 'An error occurred during your request.',
+        }
+      });
+    }
+  }
+}
+
+*/
+
+
+
+
+
+async function displayDescription(moleculeInput)
+{
+
+  const apiKey = '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';
+  const prompt = `Give a long scientific description of the chemical compound ${moleculeInput}`;
+  // const apiUrl = 'https://api.openai.com/v1/engines/text-davinci-003/completions';
+  const apiUrl = 'https://api.openai.com/v1/engines/text-curie-001/completions';
+
+  await fetch(apiUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${apiKey}`
+    },
+    body: JSON.stringify({
+      'prompt': prompt,
+      'max_tokens': 100,
+      'temperature': 0.2,
+    })
+  })
+    .then(response => response.json())
+    .then(data =>
+    {
+      console.log(data.choices[0].text.trim());
+      return data.choices[0].text.trim();
+    })
+    .catch(error => console.error(error));
+
+  // return response
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 handleSearch();
+
+
+function handleKeyDown(event)
+{
+  if (event.key === 'Enter')
+  {
+    event.preventDefault();
+    displayDescription(searchField.value)
+    handleSearch(searchField.value);
+    handleSearchBlur();
+  }
+}
 
 // Event Listeners
 searchField.addEventListener('focus', handleSearchFocus);
 searchField.addEventListener('blur', handleSearchBlur);
-searchField.addEventListener('keydown', handleKeyDown);
-searchBtn.addEventListener('click', () => handleSearch(searchField.value));
+// searchField.addEventListener('keydown', handleKeyDown);
+
+
+searchField.addEventListener('keydown', (event) =>
+{
+  if (event.key === 'Enter')
+  {
+    event.preventDefault();
+    displayDescription(searchField.value);
+    handleSearch(searchField.value);
+    handleSearchBlur();
+  }
+});
+
+
+searchBtn.addEventListener('click', () =>
+{
+
+  displayDescription(searchField.value);
+  handleSearch(searchField.value);
+
+});
 
 // let pyridineMolFile = 'Molecule Name\n  CHEMDOOD01011121543D 0   0.00000     0.00000     0\n[Insert Comment Here]\n  6  6  0  0  0  0  0  0  0  0  1 V2000\n    0.0000    1.0000    0.0000   N 0  0  0  0  0  0  0  0  0  0  0  0\n   -0.8660    0.5000    0.0000   C 0  0  0  0  0  0  0  0  0  0  0  0\n   -0.8660   -0.5000    0.0000   C 0  0  0  0  0  0  0  0  0  0  0  0\n    0.0000   -1.0000    0.0000   C 0  0  0  0  0  0  0  0  0  0  0  0\n    0.8660   -0.5000    0.0000   C 0  0  0  0  0  0  0  0  0  0  0  0\n    0.8660    0.5000    0.0000   C 0  0  0  0  0  0  0  0  0  0  0  0\n  1  2  2  0  0  0  0\n  2  3  1  0  0  0  0\n  3  4  2  0  0  0  0\n  4  5  1  0  0  0  0\n  5  6  2  0  0  0  0\n  6  1  1  0  0  0  0\nM  END';
 // let mol = ChemLib.readMOL(pyridineMolFile);
@@ -229,3 +414,48 @@ searchBtn.addEventListener('click', () => handleSearch(searchField.value));
 // let pyridineMolFile = 'Molecule Name\n  CHEMDOOD01011121543D 0   0.00000     0.00000     0\n[Insert Comment Here]\n  6  6  0  0  0  0  0  0  0  0  1 V2000\n    0.0000    1.0000    0.0000   N 0  0  0  0  0  0  0  0  0  0  0  0\n   -0.8660    0.5000    0.0000   C 0  0  0  0  0  0  0  0  0  0  0  0\n   -0.8660   -0.5000    0.0000   C 0  0  0  0  0  0  0  0  0  0  0  0\n    0.0000   -1.0000    0.0000   C 0  0  0  0  0  0  0  0  0  0  0  0\n    0.8660   -0.5000    0.0000   C 0  0  0  0  0  0  0  0  0  0  0  0\n    0.8660    0.5000    0.0000   C 0  0  0  0  0  0  0  0  0  0  0  0\n  1  2  2  0  0  0  0\n  2  3  1  0  0  0  0\n  3  4  2  0  0  0  0\n  4  5  1  0  0  0  0\n  5  6  2  0  0  0  0\n  6  1  1  0  0  0  0\nM  END';
 // let mol = ChemLib.readMOL(pyridineMolFile);
 // display3D.loadMolecule(mol);
+
+
+
+// Old React based generateDescription function
+/*
+let result = '';
+
+
+async function onSubmit()
+{
+  // _event.preventDefault();
+  try
+  {
+    const response = await fetch("/generate", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ molecule: moleculeInput }),
+    });
+
+    console.log(response);
+
+
+    const data = await response.json();
+    console.log(data);
+    if (response.status !== 200)
+    {
+      throw data.error || new Error(`Request failed with status ${response.status}`);
+    }
+
+    result = data.result;
+    // setMoleculeInput("");
+  } catch (error)
+  {
+    // Consider implementing your own error handling logic here
+    console.error(error);
+    alert(error.message);
+  }
+}
+
+await onSubmit();
+console.log(result);
+
+*/
