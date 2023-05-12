@@ -1,3 +1,4 @@
+// const apiKey = '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';
 
 
 
@@ -71,6 +72,8 @@ function Display3D(_3Dmolecule)
 {
   let molecule = Render.readMOL(_3Dmolecule);
   let display3D = new Render.TransformCanvas('display3D', size3d, size3d, true);
+
+
   display3D.styles.compass_display = true;
   display3D.styles.atoms_circles_2D = true;
   display3D.styles.atoms_useJMOLColors = true;
@@ -78,6 +81,9 @@ function Display3D(_3Dmolecule)
   display3D.styles.atoms_HBlack_2D = false;
   display3D.styles.bonds_symmetrical_2D = true;
   display3D.styles.backgroundColor = '#141414';
+
+
+
   display3D.dragPath = [];
   display3D.oldDrag = display3D.drag;
   display3D.drag = function (e)
